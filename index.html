@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로그램 사용 가이드</title>
     <style>
+		/* 크롬/Edge 브라우저에서 스크롤바 숨기기 */
+		body::-webkit-scrollbar {
+    	display: none;
+		}
+
+		/* 팝업창 크기에 딱 맞게 내용 정렬 (여백 제거) */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Malgun Gothic', sans-serif; /* 깔끔한 폰트 */
             background-color: #f9f9f9;
             color: #333;
+			overflow: hidden; /* 스크롤 아예 막기 */
+    		width: 100vw;
+    		height: 100vh;
         }
         .container {
             max-width: 310px; /* 팝업창 크기에 맞춤 */
@@ -84,8 +93,7 @@
                 <span class="step-title">STEP 3. PC와 동기화 하기</span>
                 - 측정된 표준시/서버시간을 PC와 동기화 하려면 오른쪽 동기화 버튼을 눌러주세요.<br>
 	   - 수동으로 PC시간을 조절하려면 오프셋을 활용하세요!<br>
-	   *여러번 동기화 하는 것은 의미가 없습니다. 1회 측정=1회 동기화 허용<br>
-
+	  
             </div>
             
             <hr style="border: 0; border-top: 1px dashed #ddd; margin: 20px 0;">
@@ -100,3 +108,4 @@
 </body>
 
 </html>
+
