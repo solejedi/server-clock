@@ -5,45 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로그램 사용 가이드</title>
     <style>
-		/* 크롬/Edge 브라우저에서 스크롤바 숨기기 */
-		body::-webkit-scrollbar {
-    	display: none;
-		}
+        /* 크롬/Edge 브라우저에서 스크롤바 숨기기 (기능은 유지됨) */
+        body::-webkit-scrollbar {
+            display: none;
+        }
 
-		/* 팝업창 크기에 딱 맞게 내용 정렬 (여백 제거) */
         body {
-			overflow-y: auto;
+            /* [중요] 세로 스크롤 허용 */
+            overflow-y: auto; 
             margin: 0;
             padding: 0;
-            font-family: 'Malgun Gothic', sans-serif; /* 깔끔한 폰트 */
+            font-family: 'Malgun Gothic', sans-serif;
             background-color: #f9f9f9;
             color: #333;
-    		width: 100vw;
-    		height: 100vh;
+            width: 100vw;
+            /* height: 100vh; -> 내용이 길어지면 스크롤되도록 auto로 변경하거나 삭제하는 것이 안전합니다. */
+            height: auto; 
         }
+
         .container {
-            max-width: 310px; /* 팝업창 크기에 맞춤 */
+            max-width: 310px;
             margin: 0 auto;
             background: #fff;
-            min-height: 100vh;
+            min-height: 100vh; /* 최소 높이를 화면 꽉 차게 */
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         /* 1. 제목 스타일 */
         header {
             width: 100%;
-            padding: 5 px 0;
+            padding: 0; 
             text-align: center;
             border-bottom: 1px solid #eee;
         }
+
         h2 { margin: 0; font-size: 16px; color: #2c3e50; }
         
-        /* 2. 광고 자리 (일단 회색 박스로 표시) */
+        /* 2. 광고 자리 */
         .ad-slot {
             width: 300px;
             height: 250px;
-            background-color: #e0e0e0; /* 임시 회색 배경 */
+            background-color: #e0e0e0;
             margin: 5px 0;
             display: flex;
             justify-content: center;
@@ -51,12 +55,13 @@
             color: #888;
             font-size: 14px;
             border-radius: 4px;
+            flex-shrink: 0; /* 화면이 작아져도 광고 크기 찌그러짐 방지 */
         }
 
         /* 3. 설명 내용 스타일 */
         .content {
             width: 100%;
-            padding: 0 20px;
+            padding: 0 5px 0 10px  ;
             box-sizing: border-box;
             font-size: 14px;
             line-height: 1.6;
@@ -64,6 +69,9 @@
         }
         .step { margin-bottom: 15px; }
         .step-title { font-weight: bold; color: #007bff; display: block; margin-bottom: 4px;}
+        
+        /* 링크 스타일 */
+        a { color: #007bff; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -81,19 +89,18 @@
             <div class="step">
                 <span class="step-title">STEP 1. 서버 시간 측정하기</span>
                 - 주소 입력란에 url을 입력하고 녹색 세모 버튼을 눌러주세요.<br>
-	   - 자동으로 서버시간을 측정하여 가장 정확한 시간을 표시합니다.<br>
-	    *오차범위 10ms이하
+                - 자동으로 서버시간을 측정하여 가장 정확한 시간을 표시합니다.<br>
+                <span style="font-size: 12px; color: #666;">*오차범위 10ms이하</span>
             </div>
             <div class="step">
                 <span class="step-title">STEP 2. 기준 서버 설정하기</span>
                 - 시간차 항목을 클릭하면 해당 서버가 기준이 되며, 다른 서버에서 기준서버와의 시간차가 표시됩니다.<br>
-	    *디폴트 서버=표준시(KRISS based)
+                <span style="font-size: 12px; color: #666;">*디폴트 서버=표준시(KRISS based)</span>
             </div>
             <div class="step">
                 <span class="step-title">STEP 3. PC와 동기화 하기</span>
                 - 측정된 표준시/서버시간을 PC와 동기화 하려면 오른쪽 동기화 버튼을 눌러주세요.<br>
-	   - 수동으로 PC시간을 조절하려면 오프셋을 활용하세요!<br>
-	  
+                - 수동으로 PC시간을 조절하려면 오프셋을 활용하세요!<br>
             </div>
             
             <hr style="border: 0; border-top: 1px dashed #ddd; margin: 20px 0;">
@@ -106,9 +113,4 @@
     </div>
 
 </body>
-
 </html>
-
-
-
-
